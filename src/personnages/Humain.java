@@ -1,9 +1,9 @@
 package personnages;
 
 public class Humain {
-	private String nom;
-	private String boissonfavorite;
-	private int argent;
+	protected String nom;
+	protected String boissonfavorite;
+	protected int argent;
 	
 	public Humain(String nom, String boisson, int argent){
 		this.nom = nom;
@@ -18,7 +18,7 @@ public class Humain {
 		return argent;
 	}
 	
-	private void parler(String phrase) {
+	protected void parler(String phrase) {
 		System.out.println("("+nom+") - "+phrase);
 	}
 	
