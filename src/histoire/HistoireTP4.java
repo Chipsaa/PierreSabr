@@ -25,6 +25,6 @@ public class HistoireTP4 {
 		Ronin robert = new Ronin("Robert","Shoshu",60);
 //		robert.direBonjour();
 //		robert.donner(marco);
-		robert.provoquer(yaku);
+//		robert.provoquer(yaku);
 	}
 }
