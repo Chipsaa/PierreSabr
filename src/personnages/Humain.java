@@ -44,9 +44,9 @@ public class Humain {
 	
 	public void acheter(String bien, int prix) {
 		if (prix>argent){
-			parler("Je n'ai plus que "+argent+" sous en poche. Je ne peux même pas m'offrir "+bien+" à "+prix+" sous.");
+			parler("Je n'ai plus que "+argent+" sous en poche. Je ne peux mï¿½me pas m'offrir "+bien+" ï¿½ "+prix+" sous.");
 		} else {
-			parler("J'ai "+argent+" sous en poche. Je vais pouvoir m'offrir "+bien+" à "+prix+" sous.");
+			parler("J'ai "+argent+" sous en poche. Je vais pouvoir m'offrir "+bien+" ï¿½ "+prix+" sous.");
 			perdreArgent(prix);
 		}
 	}
@@ -59,7 +59,7 @@ public class Humain {
 			for(int i = 0;i<tailleMaxMemoire-1;i++) {
 				memoire[i]=memoire[i+1];
 			}
-			memoire[nbConnaissance] = humain ;
+			memoire[nbConnaissance-1] = humain ;
 			
 		}
 	}
@@ -76,11 +76,14 @@ public class Humain {
 	}
 	
 	public void listerConnaissance() {
-		String liste = null;
+		String liste = "";
 		for(int i=0; i<nbConnaissance;i++) {
-			liste +=  ", "+memoire[i].nom;
+			liste +=  memoire[i].nom;
+			if ((i+1)<nbConnaissance) {
+				liste += ", "; 
+			}
 		}
-		parler("Je connais beaucoup de monde dont:"+liste);
+		parler("Je connais beaucoup de monde dont: "+liste);
 	}
 	
 }
